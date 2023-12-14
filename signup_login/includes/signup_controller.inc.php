@@ -17,7 +17,7 @@ function is_input_empty(string $username, string $pass, string $email) {
 // Tarkistetaan jos käyttäjän syöttämä sähköposti ei ole validi "invalid"
 function is_email_invalid(string $email) {
     // Tarkistetaan onko käyttäjän syöttämä arvo hyväksyttävä sähköpostiosoite
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return true;
     } else {
         return false;
